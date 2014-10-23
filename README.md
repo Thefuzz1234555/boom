@@ -16,7 +16,7 @@ bookmarklet boom.js > crunched.js
 
 
 ### Easy Install
-Visit this page, highlight everything and drag it into your Bookmark Bar. Rename
+Visit this page, highlight everything and drag it into your Bookmark Bar. Rename  
 [Boom](https://raw.githubusercontent.com/audibleblink/boom/master/src/crunch.js)
 
 
