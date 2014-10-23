@@ -19,7 +19,14 @@ function Boom() {
         whois: "javascript:void(location.href='https://who.is/whois/'+location.host)",
         tdfw: "javascript:(function()%7Bjavascript:var%20s%3Ddocument.createElement(%27script%27)%3Bs.setAttribute(%27src%27,%27https://nthitz.github.io/turndownforwhatjs/tdfw.js%27)%3Bdocument.body.appendChild(s)%3B%7D)()%3B"
     };
-    if (requestedBookmarklet != '') {
+    var availableBookmarklets = Object.keys(boomMarklets);
+
+    if (requestedBookmarklet === "help") {
+        alert("The available bookmarklets for this version are:\n" + availableBookmarklets.join("\n"))
+    } else
+    if (availableBookmarklets.contains(requestedBookmarklet)) {
         window.location = boomMarklets[requestedBookmarklet];
+    } else {
+        alert("Bookmarklet not found")
     }
 };
