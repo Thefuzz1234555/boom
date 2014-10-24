@@ -22,7 +22,7 @@ function Boom() {
     var availableBookmarklets = Object.keys(boomMarklets);
 
     if (requestedBookmarklet === "help") {
-        alert("The available bookmarklets for this version are:\n" + availableBookmarklets.join("\n"))
+        alert("The available bookmarklets for this version are:\n" + "\n" + availableBookmarklets.join("\n"))
     } else
     if (availableBookmarklets.contains(requestedBookmarklet)) {
         window.location = boomMarklets[requestedBookmarklet];
