@@ -22,7 +22,7 @@ Array.prototype.contains = function(obj) {
 Boom();
 
 function Boom() {
-    var requestedBookmarklet = window.prompt('Boom: Which One');
+    var requestedBookmarklet = window.prompt('Boom: Enter your Bookmarklet\nType help to see all available options');
     var boomMarklets = CONFIG['bookmarklets']
     var availableBookmarklets = Object.keys(boomMarklets);
 
