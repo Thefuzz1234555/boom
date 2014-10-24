@@ -1,35 +1,30 @@
-CONFIG = {
-    bookmarklets: {
-        plex: "javascript:%20var%20s=document.createElement(%22script%22);s.type=%22text/javascript%22;s.src=%22https://my.plexapp.com/queue/bookmarklet_payload?uid=819f10b976818604%22;var%20h=document.getElementsByTagName(%22head%22)%5B0%5D;h.appendChild(s);void(0);",
-        pocket: "javascript:(function()%7BISRIL_H='edaa';PKT_D='getpocket.com';ISRIL_SCRIPT=document.createElement('SCRIPT');ISRIL_SCRIPT.type='text/javascript';ISRIL_SCRIPT.src='http://'+PKT_D+'/b/r.js';document.getElementsByTagName('head')%5B0%5D.appendChild(ISRIL_SCRIPT)%7D)();",
-        builtwith: "javascript:void(location.href='http://builtwith.com?'+location.href)",
-        whois: "javascript:void(location.href='https://who.is/whois/'+location.host)",
-        tdfw: "javascript:(function()%7Bjavascript:var%20s%3Ddocument.createElement(%27script%27)%3Bs.setAttribute(%27src%27,%27https://nthitz.github.io/turndownforwhatjs/tdfw.js%27)%3Bdocument.body.appendChild(s)%3B%7D)()%3B"
-    },
-    loadMoreUrl: "https://raw.githubusercontent.com/audibleblink/boom/ajax-configs/lib/bookmarkletsConfig.js"
-};
-
-Array.prototype.contains = function(obj) {
-    var i = this.length;
-    while (i--) {
-        if (this[i] === obj) {
-            return true;
-        }
-    }
-    return false;
-};
+sources = [
+    "//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js",
+    "//raw.githubusercontent.com/audibleblink/boom/ajax-configs/lib/bookmarkletsConfig.js"
+];
 
 Boom();
 
+function insertJs(url){
+    var js = document.createElement('script');
+    js.src = url;
+    document.head.appendChild(js);
+}
+
+for(var i = 0; i < sources.length; i++){
+    insertJs(sources[i])
+}
+
 function Boom() {
     var requestedBookmarklet = window.prompt('Boom: Enter your Bookmarklet\nType help to see all available options');
-    var boomMarklets = CONFIG['bookmarklets']
+    var boomMarklets = CONFIG['bookmarklets'];
     var availableBookmarklets = Object.keys(boomMarklets);
+    console.log($.inArray(requestedBookmarklet, availableBookmarklets))
+
 
     if (requestedBookmarklet === "help") {
         alert("The available bookmarklets for this version are:\n" + "\n" + availableBookmarklets.join("\n"))
-    } else
-    if (availableBookmarklets.contains(requestedBookmarklet)) {
+    } else if ($.inArray(requestedBookmarklet, availableBookmarklets) !== -1) {
         window.location = boomMarklets[requestedBookmarklet];
     } else {
         alert("Bookmarklet not found")
