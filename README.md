@@ -4,10 +4,13 @@ Once upon a time, there was a bookmarklet called Quix. You could run ~100 bookma
 
 It was abandoned. I'm slowly making something to replace it. The end.
 
-###Customizing
-The bookmarlet inserts a script tag into the page whence it was invked. You must modify that required script. It's called `boom.js` lives in this repository in the `lib` folder.
+### What's a Bookmarklet?
+A bookmarklet is a bookmark stored in a web browser that contains JavaScript commands to extend the browser's functionality. Bookmarklets are unobtrusive scripts stored as the URL of a bookmark in a web browser or as a hyperlink on a web page.
 
-The bookmarklets available are in a `CONFIG` object at the top of the file. Modify this object with your scripts
+###Customizing
+The bookmarlet inserts a script tag into the page whence it was invoked. You must modify that inserted script. It's called `boom.js` and lives in this repository in the `lib` folder.
+
+The default bookmarklets available are in a `CONFIG` object at the top of the file. Modify this object with your own bookmarklets.
 
 ```js
 CONFIG = {
