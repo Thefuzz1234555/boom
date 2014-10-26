@@ -1,6 +1,9 @@
+var YOUR_GH_HANDLE, GIT_BRANCH
+
 // CUSTOMIZING: replace with your username and branch after forking
 // Default branch is MASTER
-var URL = rawGitUrl("audibleblink", null);
+YOUR_GH_HANDLE = "audibleblink";
+GIT_BRANCH = null;
 
 function rawGitUrl(ghHandle, branchName){
     branchName = branchName || "master"
@@ -8,5 +11,5 @@ function rawGitUrl(ghHandle, branchName){
 }
 
 var js = document.createElement('script');
-js.src = URL;
+js.src = rawGitUrl(YOUR_GH_HANDLE, GIT_BRANCH);
 document.head.appendChild(js);
