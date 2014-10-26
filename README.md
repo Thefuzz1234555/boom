@@ -7,7 +7,7 @@ It was abandoned. I'm slowly making something to replace it. The end.
 ###Developing
 `npm install`
 
-The `package.json` file should install the npm module `bookmarklet`. In your shell, type `bookmarklet sboom.js` from the `src/` directory to URL encode the javascript.
+The `package.json` file should install the npm module `bookmarklet`. In your shell, type `bookmarklet boom.js` from the `src/` directory to URL encode the javascript.
 
 Either copy/paste STDOUT and create a bookmarklet in your browser.
 
@@ -25,7 +25,8 @@ bookmarklet boom.js | pbcopy
 
 ### Easy Install
 
-Visit this page, highlight everything and drag it into your Bookmark Bar. Rename
+Visit this page, highlight everything and drag it into your Bookmark Bar. Rename.
+
 [Boom](https://raw.githubusercontent.com/audibleblink/boom/master/src/crunch.js)
 
 
