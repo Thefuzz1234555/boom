@@ -7,9 +7,11 @@ GIT_BRANCH = null;
 
 function rawGitUrl(ghHandle, branchName){
     branchName = branchName || "master"
-    return "//rawgit.com/" + ghHandle + "/boom/" + branchName + "/lib/boom.js";
+    return "//raw.githubusercontent.com/" + ghHandle + "/boom/" + branchName + "/lib/boom.js";
 }
 
 var js = document.createElement('script');
+js.setAttribute('type', 'text/javascript');
+js.setAttribute('charset', 'UTF-8');
 js.src = rawGitUrl(YOUR_GH_HANDLE, GIT_BRANCH);
 document.head.appendChild(js);
